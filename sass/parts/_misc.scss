@@ -37,12 +37,15 @@ blockquote {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--primary-color);
 
   /* use colored hovering */
   &:hover {
       background-color: var(--primary-color);
       color: var(--hover-color);
+      border-radius: 5px;
   }
 
   /* hover link with child elements (e.g. code)  */

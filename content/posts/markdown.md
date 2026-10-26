@@ -3,9 +3,6 @@ title = "Markdown Test"
 date = "2022-01-01"
 updated = "2022-05-01"
 
-[taxonomies]
-tags=["example"]
-
 [extra]
 comment = true
 +++

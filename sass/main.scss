@@ -8,7 +8,6 @@
 @import "parts/_note.scss";
 @import "parts/_misc.scss";
 @import "parts/_table.scss";
-@import "parts/_tags.scss";
 @import "parts/_mermaid.scss";
 @import "parts/_search.scss";
 @import "parts/_talks.scss";
@@ -17,10 +16,13 @@
 :root {
   /* Fonts */
   --font-size-base: 16px;
-  --mono-text-font: "Jetbrains Mono";
+  /* --mono-text-font: "Jetbrains Mono"; */
+  --mono-text-font: "Hack Mono";
   --text-font: "ZedTextFtl";
+  /* --text-font: "Hack"; */
   --header-font: "ZedDisplayFtl" "Space Grotesk", "Helvetica", sans-serif;
-  --code-font: "Jetbrains Mono";
+  /* --code-font: "Jetbrains Mono"; */
+  --code-font: "Hack Mono";
 
   --line-height: 1.5;
   --page-width: 920px;

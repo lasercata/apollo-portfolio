@@ -26,7 +26,8 @@
 
     <div class="right-nav">
         {% for menu in config.extra.menu %}
-            <a href={{ get_url(path=menu.url) }} style="margin-right: 0.5em">{{ menu.name }}</a>
+            <a href={{ get_url(path=menu.url) }} class="nav-menu-item">{{ menu.name }}</a>
+            <p class="nav-menu-separator">/</p>
         {% endfor %}
 
         {% if config.build_search_index %}

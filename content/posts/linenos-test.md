@@ -1,9 +1,6 @@
 +++
 title = "Line Highlighting Example"
 date = "2026-04-04"
-
-[taxonomies]
-tags=["test"]
 +++
 
 This page demonstrates Zola's [code block annotations](https://www.getzola.org/documentation/content/syntax-highlighting/) supported by the Apollo theme.

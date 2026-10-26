@@ -1,4 +1,23 @@
 @font-face {
+  font-family: "Hack Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Hack/Hack-Regular-Nerd-Font-Complete-Mono.ttf"), local("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hack";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Hack/Hack-Regular-Nerd-Font-Complete.ttf"), local("ttf");
+  font-display: swap;
+}
+
+//
+//
+
+@font-face {
   font-family: "Jetbrains Mono";
   font-style: normal;
   font-weight: 400;

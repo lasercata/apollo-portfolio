@@ -1,6 +1,6 @@
 # apollo
 
-Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a live preview [here](https://not-matthias.github.io/apollo).
+Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live preview of the original apollo theme [here](https://not-matthias.github.io/apollo).
 
 <sub><sup>Named after the greek god of knowledge, wisdom and intellect</sup></sub>
 
@@ -23,10 +23,10 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 - [x] Pagination
 - [x] Themes (light, dark, auto)
 - [x] Projects page
-- [x] Analytics using [GoatCounter](https://www.goatcounter.com/) / [Umami](https://umami.is/) / [Google Analytics](https://analytics.google.com/)
+- [ ] Analytics
 - [x] Social Links
 - [x] MathJax Rendering
-- [x] Taxonomies
+- [ ] Taxonomies
 - [x] Meta Tags For Individual Pages
 - [x] Custom homepage
 - [x] Comments
@@ -35,19 +35,20 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 - [x] Mermaid diagram support
 - [x] Table of Contents
 - [x] Configurable cards layout
+- [ ] Multiple languages
 
 ## Installation
 
 1. Download the theme
 
 ```
-git submodule add https://github.com/not-matthias/apollo themes/apollo
+git submodule add https://github.com/lasercata/apollo-portfolio themes/apollo-portfolio
 ```
 
 2. Add the following to the top of your `config.toml`
 
 ```toml
-theme = "apollo"
+theme = "apollo-portfolio"
 taxonomies = [{ name = "tags" }]
 
 [extra]
@@ -59,7 +60,7 @@ menu = [
   # Configure menu bar here
 ]
 
-# See this for more options: https://github.com/not-matthias/apollo/blob/main/config.toml#L14
+# See this for more options: https://github.com/lasercata/apollo-portfolio/blob/main/config.toml#L14
 ```
 
 3. Copy the example content
@@ -74,4 +75,4 @@ Checkout all the [options you can configure](./content/posts/configuration.md) a
 
 ## References
 
-This theme is based on [archie-zola](https://github.com/XXXMrG/archie-zola/).
+This theme is a fork of [apollo](https://github.com/not-matthias/apollo/), that is itself based on [archie-zola](https://github.com/XXXMrG/archie-zola/).

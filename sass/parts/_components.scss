@@ -7,6 +7,7 @@
   background: var(--bg-2);
   font-size: 0.75rem;
   color: var(--text-color);
+  text-decoration: none;
 
   /* Ensure that the a tag has also a bottom border, which is by default hidden */
   border: 1px solid var(--border-color) !important;

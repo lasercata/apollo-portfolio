@@ -65,6 +65,15 @@ nav {
         flex-wrap: wrap;
         align-items: center;
 
+        .nav-menu-item {
+          margin-right: 0.5em;
+        }
+
+        .nav-menu-separator {
+          margin-right: 0.5em;
+          color: #ff4500;
+        }
+
         #dark-mode-toggle {
             margin-left: 0.5rem;
             padding: 0.1rem;

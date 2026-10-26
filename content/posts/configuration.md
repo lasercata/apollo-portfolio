@@ -2,9 +2,6 @@
 title = "Configuring Apollo"
 date = "2024-07-09"
 
-[taxonomies]
-tags=["documentation"]
-
 [extra]
 repo_view = true
 comment = true
@@ -220,87 +217,6 @@ You can add anchor links by adding the following to your `_index.md`:
 
 ```toml
 insert_anchor_links = "heading"
-```
-
-## Taxonomy sorting
-
-You can sort the taxonomies page with the following config:
-```toml
-[extra.taxonomies]
-sort_by = "page_count"         # e.g. name, page_count
-reverse = true
-```
-
-The `sort_by` argument is directly passed to the `sort_by` function:
-```jinja
-{% set sort_by = config.extra.taxonomies.sort_by | default(value="name") %}
-{% set terms = terms | default(value=[]) | sort(attribute=sort_by) %}
-
-{% if config.extra.taxonomies.reverse | default(value=false) %}
-    {% set terms = terms | reverse %}
-{% endif %}
-
-{% for term in terms %}
-    <li>
-        <a href="{{ term.permalink | safe }}">
-            {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
-        </a>
-    </li>
-{% endfor %}
-```
-
-Possible values include anything within the [TaxonomyTerm object](https://www.getzola.org/documentation/templates/taxonomies/):
-```rust
-name: String;
-slug: String;
-path: String;
-permalink: String;
-pages: Array<Page>;
-page_count: Number;
-```
-
-Examples:
-- `name` to sort by name
-- `page_count` to sort by page count
-
-## Analytics
-
-Enable or disable analytics tracking:
-
-```toml
-[extra.analytics]
-enabled = false
-```
-
-After enabling analytics, configure GoatCounter, Umami, or Google.
-
-### GoatCounter
-
-Configure GoatCounter analytics:
-
-```toml
-[extra.analytics.goatcounter]
-user = "your_user"           # Your GoatCounter username
-host = "example.com"         # Optional: Custom host
-```
-
-### Umami Analytics
-
-Configure Umami analytics:
-
-```toml
-[extra.analytics.umami]
-website_id = "43929cd1-1e83...."                    # Your Umami website ID
-host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
-```
-
-### Google Analytics
-
-Configure Google Analytics:
-
-```toml
-[extra.analytics.google]
-tracking_id = "G-XXXXXXXXXX"           # Your Google Analytics measurement ID
 ```
 
 ## Fediverse Author Attribution
