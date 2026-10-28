@@ -48,12 +48,11 @@ nav {
         .social img {
           width: 16px;
           height: 16px;
-
         }
 
         /* Don't display background on hover */
         a:hover {
-            background-color: transparent;
+          background-color: transparent;
         }
       }
     }
@@ -71,7 +70,7 @@ nav {
 
         .nav-menu-separator {
           margin-right: 0.5em;
-          color: #ff4500;
+          color: var(--primary-color);
         }
 
         .lang-code {
