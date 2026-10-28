@@ -1,4 +1,6 @@
-# apollo
+# apollo-portfolio
+
+Fork of the [apollo](https://github.com/not-matthias/apollo) theme, focusing on portfolio, and adding multilingual configuration.
 
 Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live preview of the original apollo theme [here](https://not-matthias.github.io/apollo).
 
@@ -49,18 +51,28 @@ git submodule add https://github.com/lasercata/apollo-portfolio themes/apollo-po
 
 ```toml
 theme = "apollo-portfolio"
-taxonomies = [{ name = "tags" }]
+default_language = "en"
+
+# Add languages here, e.g for italian:
+[languages.it.translations]
 
 [extra]
 theme = "auto"
 socials = [
   # Configure socials here
 ]
+
+[extra.en]
 menu = [
   # Configure menu bar here
 ]
 
-# See this for more options: https://github.com/lasercata/apollo-portfolio/blob/main/config.toml#L14
+[extra.it]
+menu = [
+  # Configure menu bar here for the Italian language
+]
+
+# See this for more options: https://github.com/lasercata/apollo-portfolio/blob/main/config.toml
 ```
 
 3. Copy the example content
@@ -68,10 +80,6 @@ menu = [
 ```
 cp -r themes/apollo/content/* content/
 ```
-
-## Configuration
-
-Checkout all the [options you can configure](./content/posts/configuration.md) and the [example pages](./content/posts/).
 
 ## References
 
