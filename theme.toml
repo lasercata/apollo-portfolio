@@ -1,9 +1,9 @@
-name = "apollo"
-description = "Modern and minimalistic blog theme"
+name = "apollo-portfolio"
+description = "Modern and minimalistic theme"
 min_version = "0.14.0"
 license = "MIT"
-homepage = "https://github.com/not-matthias/apollo"
-demo = "https://not-matthias.github.io/apollo"
+homepage = "https://github.com/lasercata/apollo-portfolio"
+# demo = "https://not-matthias.github.io/apollo"
 
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will

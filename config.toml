@@ -1,10 +1,17 @@
 base_url = "https://not-matthias.github.io/apollo/"
-title = "apollo-portfolio"
 description = "This is an example description"
 
 build_search_index = false
 compile_sass = true
 minify_html = true
+
+default_language = "en"
+
+# To add a language, add a line here first
+# This is needed for zola to generate files at /it (for example)
+# Comment all lines to disable other languages
+[languages.it.translations]
+[languages.fr.translations]
 
 [markdown.highlighting]
 style = "class"
@@ -13,6 +20,9 @@ dark_theme = "github-dark"
 error_on_missing_language = true
 
 [extra]
+# Title defined here in order to be available in all languages
+title = "apollo-portfolio"
+
 toc = true
 # favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle, toggle-auto
@@ -24,17 +34,31 @@ repo_url = "https://github.com/lasercata/apollo-portfolio/"
 fediverse = false    # author attribution
 fediverse_creator = ""    # e.g. @user@instance
 
-menu = [
-    { name = "Posts", url = "/posts", weight = 1 },
-    { name = "Projects", url = "/projects", weight = 2 },
-    { name = "Talks", url = "/talks", weight = 3 },
-    { name = "Tags", url = "/tags", weight = 4 },
-]
-
 socials = [
     { name = "github", url = "https://github.com/", icon = "github" },
 ]
 
 stylesheets = [
     # "custom.css"    # at /static/custom.css
+]
+
+[extra.en]
+menu = [
+    { name = "Posts", url = "/posts", weight = 1 },
+    { name = "Projects", url = "/projects", weight = 2 },
+    { name = "About", url = "about", weight = 3 },
+]
+
+[extra.it]
+menu = [
+    { name = "Posts", url = "/it/posts", weight = 1 },
+    { name = "Progetti", url = "/it/projects", weight = 2 },
+    { name = "Chi sono", url = "/it/about", weight = 3 },
+]
+
+[extra.fr]
+menu = [
+    { name = "Posts", url = "/fr/posts", weight = 1 },
+    { name = "Projets", url = "/fr/projects", weight = 2 },
+    { name = "À propos", url = "/fr/about", weight = 3 },
 ]

@@ -1,11 +1,20 @@
 <nav>
+    {# Title/logo and socials #}
     <div class="left-nav">
+        {# Define base URL according to current lang #}
+        {% if lang == config.default_language %}
+            {% set base_url = config.base_url %}
+        {% else %}
+            {% set base_url = config.base_url ~ "/" ~ lang %}
+        {% endif %}
+
+        {# Logo or title #}
         {% if config.extra.logo %}
-            <a href={{ config.base_url }} class="logo">
-                <img alt="{{ config.title }}" src="{{ get_url(path=config.extra.logo) }}" />
+            <a href={{ base_url }} class="logo">
+                <img alt="{{ config.extra.title }}" src="{{ get_url(path=config.extra.logo) }}" />
             </a>
         {% else %}
-            <a href={{ config.base_url }}>{{ config.title }}</a>
+            <a href={{ base_url }}>{{ config.extra.title }}</a>
         {% endif %}
 
 
@@ -24,58 +33,43 @@
         </div>
     </div>
 
+    {# Nav bar, languages, theme #}
     <div class="right-nav">
-        {% for menu in config.extra.menu %}
+        {# Menu #}
+        {% set current_menu = config.extra[lang].menu %}
+        {% for menu in current_menu %}
             <a href={{ get_url(path=menu.url) }} class="nav-menu-item">{{ menu.name }}</a>
-            <p class="nav-menu-separator">/</p>
+
+            {% if not loop.last %}
+                <p class="nav-menu-separator">/</p>
+            {% endif %}
         {% endfor %}
 
-        {% if config.build_search_index %}
-            <button id="search-button"
-                    class="search-button"
-                    title="$SHORTCUT to open search">
-                <img src="{{ get_url(path='icons/search.svg') }}"
-                     alt="Search"
-                     class="search-icon" />
-            </button>
+        {# Languages #}
+        {% if config.languages %}
+            <p class="nav-menu-separator">|</p>
 
-            <div id="searchModal"
-                 class="search-modal js"
-                 role="dialog"
-                 aria-labelledby="modalTitle">
-                <div id="modal-content">
-                    <h1 id="modalTitle" class="page-header">
-                        Search
-                    </h1>
-                    <div id="searchBar">
-                        <input id="searchInput"
-                               role="combobox"
-                               autocomplete="off"
-                               spellcheck="false"
-                               aria-expanded="false"
-                               aria-controls="results-container"
-                               placeholder="Search..." />
-                        <button id="clear-search" class="clear-button" title="Clear search">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div id="results-container">
-                        <div id="results-info">
-                            <span id="zero_results" style="display: none;">No results</span>
-                            <span id="one_result" style="display: none;">1 result</span>
-                            <span id="many_results" style="display: none;">$NUMBER results</span>
-                        </div>
-                        <div id="results" role="listbox">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% for lang_code in config.languages | keys %}
+                {# URL for default language is "/" #}
+                {% if lang_code == config.default_language %}
+                    <a href="/">{{ lang_code }}</a>
+                {% else %}
+                    <a href="/{{ lang_code }}">{{ lang_code }}</a>
+                {% endif %}
+
+                {% if not loop.last %}
+                    |
+                {% endif %}
+            {% endfor %}
+
+            <p class="nav-menu-separator"></p>
         {% endif %}
 
+        {# Theme #}
         {% set theme = config.extra.theme | default(value="toggle") %}
         {% if theme == "toggle" or theme == "toggle-auto" %}
+            <p class="nav-menu-separator">|</p>
+
             <a id="dark-mode-toggle"
                onclick="toggleTheme(); event.preventDefault();"
                href="#">

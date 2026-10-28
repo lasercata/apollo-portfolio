@@ -30,12 +30,12 @@ Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live
 - [x] Meta Tags For Individual Pages
 - [x] Custom homepage
 - [x] Comments
-- [x] Search
+- [ ] Search
 - [x] RSS feeds
 - [x] Mermaid diagram support
 - [x] Table of Contents
 - [x] Configurable cards layout
-- [ ] Multiple languages
+- [X] Multiple languages
 
 ## Installation
 
