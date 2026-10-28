@@ -7,11 +7,13 @@ minify_html = true
 
 default_language = "en"
 
-# To add a language, add a line here first
-# This is needed for zola to generate files at /it (for example)
+# To add a language, add a line here first.
+# This is needed for zola to generate files at /it (for example).
+# Then create the menu in [extra.xx].
+# Then translate **all** your content (e.g _index.md -> _index.xx.md).
 # Comment all lines to disable other languages
 [languages.it.translations]
-[languages.fr.translations]
+# [languages.fr.translations]
 
 [markdown.highlighting]
 style = "class"
@@ -44,21 +46,21 @@ stylesheets = [
 
 [extra.en]
 menu = [
-    { name = "Posts", url = "/posts", weight = 1 },
-    { name = "Projects", url = "/projects", weight = 2 },
-    { name = "About", url = "about", weight = 3 },
+    { name = "Projects", url = "/projects", weight = 1 },
+    { name = "About", url = "/about", weight = 2 },
+    { name = "Contact", url = "/contact", weight = 3 },
 ]
 
 [extra.it]
 menu = [
-    { name = "Posts", url = "/it/posts", weight = 1 },
-    { name = "Progetti", url = "/it/projects", weight = 2 },
-    { name = "Chi sono", url = "/it/about", weight = 3 },
+    { name = "Progetti", url = "/it/projects", weight = 1 },
+    { name = "Informazioni", url = "/it/about", weight = 2 },
+    { name = "Conttato", url = "/it/contact", weight = 3 },
 ]
 
-[extra.fr]
-menu = [
-    { name = "Posts", url = "/fr/posts", weight = 1 },
-    { name = "Projets", url = "/fr/projects", weight = 2 },
-    { name = "À propos", url = "/fr/about", weight = 3 },
-]
+# [extra.fr]
+# menu = [
+#     { name = "Projets", url = "/fr/projects", weight = 1 },
+#     { name = "À propos", url = "/fr/about", weight = 2 },
+#     { name = "Contact", url = "/fr/contact", weight = 3 },
+# ]

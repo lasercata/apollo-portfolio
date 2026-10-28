@@ -50,11 +50,23 @@
             <p class="nav-menu-separator">|</p>
 
             {% for lang_code in config.languages | keys %}
-                {# URL for default language is "/" #}
-                {% if lang_code == config.default_language %}
-                    <a href="/">{{ lang_code }}</a>
+                {# On a page, translate button should link to the same page in the other lang #}
+                {% if page %}
+                    {% set p = get_page(path=page.relative_path, lang=lang_code) %}
+                    <a href="{{ p.permalink }}" class="lang-code">{{ lang_code }}</a>
+
+                {# Same for sections #}
+                {% elif section %}
+                    {% set s = get_section(path=section.relative_path, lang=lang_code) %}
+                    <a href="{{ s.permalink }}" class="lang-code">{{ lang_code }}</a>
+
+                {# Home: URL for default language is "/" #}
+                {% elif lang_code == config.default_language %}
+                    <a href="/" class="lang-code">{{ lang_code }}</a>
+
+                {# Home: URL for other languages #}
                 {% else %}
-                    <a href="/{{ lang_code }}">{{ lang_code }}</a>
+                    <a href="/{{ lang_code }}" class="lang-code">{{ lang_code }}</a>
                 {% endif %}
 
                 {% if not loop.last %}

@@ -21,32 +21,18 @@ template = "homepage.html"
 </style>
 
 <div class="homepage-hero">
-    <h1 class="homepage-hero-title">Apollo</h1>
-    <p class="homepage-hero-subtitle">A modern and minimalistic blog theme powered by Zola.</p>
+    <h1 class="homepage-hero-title">Apollo-portfolio</h1>
+    <p class="homepage-hero-subtitle">A modern and minimalistic portfolio theme powered by Zola.</p>
 </div>
-
-# Features
-
-- [Light, dark, and auto themes](@/posts/configuration.md#theme-mode-theme)
-- [Projects page](@/projects/_index.md)
-- [Talks page](https://not-matthias.github.io/talks/)
-- [Social media links](@/posts/configuration.md#socials)
-- [MathJax rendering](@/posts/math-symbol.md)
-- [Custom homepage](@/posts/custom-homepage.md)
-- [Comments](@/posts/configuration.md#comments-comment)
-- [Search functionality](@/posts/configuration.md#search-build-search-index)
-- [Characters](@/posts/configuration.md#character-components)
-
-Checkout all the [options you can configure](@/posts/configuration.md) and the [example pages](@/posts/_index.md).
 
 # Quick Start
 
 1.  **Add the theme as a submodule:**
     ```bash
-    git submodule add https://github.com/not-matthias/apollo themes/apollo
+    git submodule add https://github.com/lasercata/apollo-portfolio themes/apollo-portfolio
     ```
 2.  **Configure your `config.toml`:**
-    Set `theme = "apollo"` and add your site's configuration.
+    Set `theme = "apollo-portfolio"` and add your site's configuration.
 3.  **Start the Zola server:**
     ```bash
     zola serve
