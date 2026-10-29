@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: "Hack Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Hack/Hack-Bold-Nerd-Font-Complete-Mono.ttf"), local("ttf");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Hack";
   font-style: normal;
   font-weight: 400;
@@ -16,22 +24,6 @@
 
 //
 //
-
-@font-face {
-  font-family: "Jetbrains Mono";
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/JetbrainsMono/JetBrainsMono-Regular.ttf"), local("ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Jetbrains Mono";
-  font-style: normal;
-  font-weight: 700;
-  src: url("fonts/JetbrainsMono/JetBrainsMono-Bold.ttf"), local("ttf");
-  font-display: swap;
-}
 
 @font-face {
   font-family: "Space Grotesk";

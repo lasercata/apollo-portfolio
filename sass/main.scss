@@ -17,12 +17,10 @@
 :root {
   /* Fonts */
   --font-size-base: 16px;
-  /* --mono-text-font: "Jetbrains Mono"; */
   --mono-text-font: "Hack Mono";
   --text-font: "ZedTextFtl";
-  /* --text-font: "Hack"; */
-  --header-font: "ZedDisplayFtl" "Space Grotesk", "Helvetica", sans-serif;
-  /* --code-font: "Jetbrains Mono"; */
+  --header-font: "Space Grotesk";
+  /* --header-font: "ZedDisplayFtl"; */
   --code-font: "Hack Mono";
 
   --line-height: 1.5;
