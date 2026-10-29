@@ -73,16 +73,8 @@
               href="{{ get_url(path=config.extra.favicon) }}" />
     {% endif %}
 
-    {# Font from cdn or disk #}
-    {% if config.extra.use_cdn | default(value=false) %}
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" />
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css" />
-    {% else %}
-        <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
-    {% endif %}
+    {# Font #}
+    <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
 
     {# Fancy Codeblock #}
     {% if config.extra.fancy_code %}
