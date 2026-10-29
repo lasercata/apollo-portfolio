@@ -49,6 +49,17 @@ stylesheets = [
     # "custom.css"    # at /static/custom.css
 ]
 
+[extra.analytics]
+enabled = false
+
+[extra.analytics.goatcounter]
+user = "your_user"
+host = "example.com" # default= goatcounter.com
+
+[extra.analytics.umami]
+website_id = "43929cd1-1e83...."
+host_url = "https://stats.mywebsite.com" # default: https://api-gateway.umami.dev/
+
 [extra.en]
 menu = [
     { name = "Projects", url = "/projects", weight = 1 },

@@ -25,7 +25,7 @@ Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live
 - [x] Pagination
 - [x] Themes (light, dark, auto)
 - [x] Projects page
-- [ ] Analytics
+- [X] Analytics using [GoatCounter](https://www.goatcounter.com/) / [Umami](https://umami.is/)
 - [x] Social Links
 - [x] MathJax Rendering
 - [ ] Taxonomies
