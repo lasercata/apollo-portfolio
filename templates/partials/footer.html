@@ -1,0 +1,25 @@
+<footer>
+  <div>
+    {% if config.extra.copyright %}
+      {{ now() | date(format="%Y") }} ©
+      <i>{{ config.extra.copyright or "" }}</i>
+    {% endif %}
+  </div>
+
+  {# &mdash; #}
+  {# &middot; #}
+  &bull;
+
+  <div>
+    {% if config.extra.source_code %}
+      <a href="{{ config.extra.source_code }}" class="source-code">
+        {# <img alt="source code" src="{{ get_url(path='icons/code.svg') }}" /> #}
+        source
+      </a>
+    {% endif %}
+  </div>
+
+  &bull;
+
+  {% include "partials/socials.html" %}
+</footer>

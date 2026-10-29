@@ -3,6 +3,7 @@
 @import "parts/_character.scss";
 @import "parts/_code.scss";
 @import "parts/_header.scss";
+@import "parts/_footer.scss";
 @import "parts/_image.scss";
 @import "parts/_toc.scss";
 @import "parts/_note.scss";
@@ -45,7 +46,7 @@ html {
   }
 }
 
-body {
+.body-without-footer {
   display: flex;
   flex-grow: 1;
   padding: 0.9rem;
@@ -96,4 +97,11 @@ body {
 
 
   }
+}
+
+body {
+  padding: 0.9rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: calc(100vh - 150px);
 }
