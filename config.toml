@@ -24,14 +24,18 @@ error_on_missing_language = true
 [extra]
 # Title defined here in order to be available in all languages
 title = "apollo-portfolio"
+copyright = "Your name"
+# favicon = "/icon/favicon.png"
+
+# Source code link (footer)
+repo_url = "https://github.com/lasercata/apollo-portfolio/"
+repo_view = false  # Add a link to source code in pages
 
 toc = true
-# favicon = "/icon/favicon.png"
 theme = "toggle"              # light, dark, auto, toggle, toggle-auto
 fancy_code = true
 dynamic_note = true           # a note that can be toggled
 mathjax = false
-repo_url = "https://github.com/lasercata/apollo-portfolio/"
 
 fediverse = false    # author attribution
 fediverse_creator = ""    # e.g. @user@instance
@@ -40,10 +44,6 @@ socials = [
     { name = "github", url = "https://github.com/", icon = "github" },
     { name = "email", url = "mailto:mail@example.com", icon = "email" },
 ]
-
-
-copyright = "Your name"
-source_code = "https://github.com/lasercata/apollo-portfolio"
 
 stylesheets = [
     # "custom.css"    # at /static/custom.css
