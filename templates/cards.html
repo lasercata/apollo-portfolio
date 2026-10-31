@@ -88,9 +88,7 @@
                                 {% if page.extra?.tags %}
                                     <div class="card-tags">
                                         {%- for tag in page.extra.tags | sort -%}
-                                            {% if loop.index <= 4 %}
-                                                <span class="card-tag">#{{ tag }}</span>
-                                            {% endif %}
+                                            <span class="card-tag">#{{ tag }}</span>
                                         {%- endfor -%}
                                     </div>
                                 {% endif %}
