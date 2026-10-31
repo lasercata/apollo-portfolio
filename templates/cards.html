@@ -23,6 +23,12 @@
                 {%- set page = pages[idx] -%}
                 <div class="card">
                     {% if page.extra?.local_image or page.extra?.remote_image or page.extra?.local_video or page.extra?.remote_video %}
+                        {% if page.extra?.link_to %}
+                            {% set linking_to = page.extra.link_to %}
+                        {% elif page.content %}
+                            {% set linking_to = page.permalink | safe %}
+                        {% endif %}
+
                         <div class="card-media">
                             {% if page.extra?.local_image %}
                                 {% set path = page.extra.local_image %}
@@ -30,11 +36,26 @@
                                     {% set path = section.path ~ "/" ~ page.extra.local_image %}
                                 {% endif %}
                                 {% set image = resize_image(path=path, height=media_height, op="fit_height", format="webp") %}
-                                <img class="card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+
+                                {% if linking_to %}
+                                  <a href="{{ linking_to }}">
+                                    <img class="card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+                                  </a>
+                                {% else %}
+                                  <img class="card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+                                {% endif %}
                             {% elif page.extra?.remote_image %}
-                                <img class="card-image"
-                                     alt="{{ page.title }}"
-                                     src="{{ page.extra.remote_image }}" />
+                                {% if linking_to %}
+                                  <a href="{{ linking_to }}">
+                                    <img class="card-image"
+                                         alt="{{ page.title }}"
+                                         src="{{ page.extra.remote_image }}" />
+                                  </a>
+                                {% else %}
+                                  <img class="card-image"
+                                       alt="{{ page.title }}"
+                                       src="{{ page.extra.remote_image }}" />
+                                {% endif %}
                             {% elif page.extra?.local_video %}
                                 {% set video_path = page.extra.local_video %}
                                 {% if video_path is not starting_with(pat="/") %}
