@@ -31,6 +31,13 @@ copyright = "Your name"
 repo_url = "https://github.com/lasercata/apollo-portfolio/"
 repo_view = false  # Add a link to source code in pages
 
+# If `false`, all pages should be translated (won't compile otherwise).
+# Set to `true` to disable it.
+allow_missing_translation_pages = false
+
+# Same for sections
+allow_missing_translation_sections = false
+
 toc = true
 theme = "toggle"              # light, dark, auto, toggle, toggle-auto
 fancy_code = true
