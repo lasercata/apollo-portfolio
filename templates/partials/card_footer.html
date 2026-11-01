@@ -1,0 +1,26 @@
+{%- set has_card_links = page.extra?.card_links or page.extra?.github or page.extra?.demo -%}
+{% if has_card_links or page.extra?.tags %}
+    <div class="card-footer">
+        {% if has_card_links %}
+            <div class="card-links">
+                {% if page.extra?.github %}
+                    {{<ui.icon_button href={page.extra.github} text="GitHub" icon="github" />}}
+                {% endif %}
+                {% if page.extra?.demo %}
+                    {{<ui.icon_button href={page.extra.demo} text="Demo" icon="globe" />}}
+                {% endif %}
+                {%- for card_link in page.extra?.card_links or [] -%}
+                    {{<ui.icon_button href={card_link.url} text={card_link.text} icon={card_link.icon or ""} />}}
+                {%- endfor -%}
+            </div>
+        {% endif %}
+
+        {% if page.extra?.tags %}
+            <div class="card-tags">
+                {%- for tag in page.extra.tags | sort -%}
+                    <span class="card-tag">#{{ tag }}</span>
+                {%- endfor -%}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
