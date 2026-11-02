@@ -68,12 +68,6 @@ a {
       border: none;
       padding: 0 .2em;
   }
-
-    /* disable colored hovering for video in /talks */
-    &.talk-video:hover {
-        background-color: transparent;
-        color: inherit;
-    }
 }
 
 /* Only have colored links inside the text */
@@ -91,9 +85,7 @@ main {
   // Disable colored links in:
   // - .meta
   // - header (socials, theme toggle)
-  // - /talks
-  // - /projects
-  .meta a, .talks-grid a {
+  .meta a {
     border-bottom: none;
   }
 
