@@ -31,7 +31,7 @@ Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live
 - [ ] Taxonomies
 - [x] Meta Tags For Individual Pages
 - [x] Custom homepage
-- [x] Comments
+- [ ] Comments
 - [ ] Search
 - [x] RSS feeds
 - [x] Mermaid diagram support
