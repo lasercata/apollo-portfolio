@@ -23,6 +23,18 @@ nav {
     justify-content: space-between;
     padding: 0;
 
+    /* Make it sticky to top */
+    position: sticky;
+    top: 5px;
+    z-index: 1000;
+
+    /* Add background */
+    background-color: color-mix(in srgb, var(--bg-0) 50%, transparent);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+
     /* Mobile-specific adjustments */
     @media (max-width: 600px) {
         flex-direction: column;
