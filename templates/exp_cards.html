@@ -60,33 +60,33 @@
                 </h1>
 
                 <div class="exp-card-info">
-                    {% if page.extra?.name %}
-                        {{ page.extra.name }}
-                    {% endif %}
+                    <div class="exp-card-info-space">
+                        <div>
+                            {% if page.extra?.name %}
+                                {{ page.extra.name }}
+                            {% endif %}
+                        </div>
 
-                    {% if page.extra?.name and page.extra?.duration %}
-                        &bull;
-                    {% endif %}
+                        <div>
+                            {% if page.extra?.duration %}
+                                {{ page.extra.duration }}
+                            {% endif %}
+                        </div>
+                    </div>
 
-                    {% if page.extra?.duration %}
-                        {{ page.extra.duration }}
-                    {% endif %}
+                    <div class="exp-card-info-space">
+                        <div>
+                            {% if page.extra?.contract %}
+                                {{ page.extra.contract }}
+                            {% endif %}
+                        </div>
 
-                    {% if (page.extra?.name or page.extra?.duration) and (page.extra?.location or page.extra?.contract) %}
-                        <br>
-                    {% endif %}
-
-                    {% if page.extra?.contract %}
-                        {{ page.extra.contract }}
-                    {% endif %}
-
-                    {% if page.extra?.contract and page.extra?.location %}
-                        &bull;
-                    {% endif %}
-
-                    {% if page.extra?.location %}
-                        {{ page.extra.location }}
-                    {% endif %}
+                        <div>
+                            {% if page.extra?.location %}
+                                {{ page.extra.location }}
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
 
                 {% if page.description %}

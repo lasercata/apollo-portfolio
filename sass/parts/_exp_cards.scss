@@ -54,9 +54,11 @@
 
   &-info {
     color: #999;
+  }
+
+  &-info-space {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   &-content {
