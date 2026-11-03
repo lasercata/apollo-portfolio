@@ -7,7 +7,7 @@
             <div class="title">
                 {% for ancestor in page.ancestors %}
                     {# Get the section object using the ancestor path #}
-                    {% set section = get_section(path=ancestor, metadata_only=false) %}
+                    {% set section = get_section(path=ancestor, metadata_only=false, lang=page.lang) %}
                     <a href="{{ section.permalink }}">{{ section.title }}</a> /
                 {% endfor %}
                 <span>{{ page.title }}</span>
