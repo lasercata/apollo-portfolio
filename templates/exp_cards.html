@@ -60,33 +60,37 @@
                 </h1>
 
                 <div class="exp-card-info">
-                    <div class="exp-card-info-space">
-                        <div>
+                    {% if page.extra?.name or page.extra?.duration %}
+                        <div class="exp-card-info-space">
                             {% if page.extra?.name %}
-                                {{ page.extra.name }}
+                                <div>
+                                    {{ page.extra.name }}
+                                </div>
                             {% endif %}
-                        </div>
 
-                        <div>
                             {% if page.extra?.duration %}
-                                {{ page.extra.duration }}
+                                <div>
+                                    {{ page.extra.duration }}
+                                </div>
                             {% endif %}
                         </div>
-                    </div>
+                    {% endif %}
 
-                    <div class="exp-card-info-space">
-                        <div>
+                    {% if page.extra?.contract or page.extra?.location %}
+                        <div class="exp-card-info-space">
                             {% if page.extra?.contract %}
-                                {{ page.extra.contract }}
+                                <div>
+                                    {{ page.extra.contract }}
+                                </div>
                             {% endif %}
-                        </div>
 
-                        <div>
                             {% if page.extra?.location %}
-                                {{ page.extra.location }}
+                                <div>
+                                    {{ page.extra.location }}
+                                </div>
                             {% endif %}
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
 
                 {% if page.description %}
