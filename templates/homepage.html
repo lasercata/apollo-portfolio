@@ -8,6 +8,19 @@
                 {{<post.page_header title={section.title} />}}
             {% endif %}
             {{ section.content | safe }}
+
+            {% set path_to_exp = section.extra?.path_to_exp %}
+            {% set path_to_edu = section.extra?.path_to_edu %}
+
+            {% if path_to_exp %}
+              {% set section = get_section(path=path_to_exp, lang=section.lang) %}
+              {% include "exp_cards.html" %}
+            {% endif %}
+
+            {% if path_to_edu %}
+              {% set section = get_section(path=path_to_edu, lang=section.lang) %}
+              {% include "exp_cards.html" %}
+            {% endif %}
         </section>
     </article>
 </main>

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+
+{% component exp_cards_posts(pages: array, section: map) %}
+{% set media_width = section.extra?.card_media_width or 50 %}
+{% set columns = 1 %}
+<div class="exp-cards"
+     style="--columns: {{ columns }};
+            --media-width: {{ media_width }}px">
+
+    {%- for page in pages %}
+        <div class="exp-card">
+            {% if page.extra?.local_image or page.extra?.remote_image %}
+                {% if page.extra?.link_to %}
+                    {% set linking_to = page.extra.link_to %}
+                {% elif page.content %}
+                    {% set linking_to = page.permalink | safe %}
+                {% endif %}
+
+                <div class="exp-card-media">
+                    {% if page.extra?.local_image %}
+                        {% set path = page.extra.local_image %}
+                        {% if path is not starting_with(pat="/") %}
+                            {% set path = section.path ~ "/" ~ page.extra.local_image %}
+                        {% endif %}
+                        {% set image = resize_image(path=path, width=media_width, op="fit_width", format="webp") %}
+
+                        {% if linking_to %}
+                          <a href="{{ linking_to }}">
+                            <img class="exp-card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+                          </a>
+                        {% else %}
+                          <img class="exp-card-image" alt="{{ page.title }}" src="{{ image.url }}" />
+                        {% endif %}
+                    {% elif page.extra?.remote_image %}
+                        {% if linking_to %}
+                          <a href="{{ linking_to }}">
+                            <img class="exp-card-image"
+                                 alt="{{ page.title }}"
+                                 src="{{ page.extra.remote_image }}" />
+                          </a>
+                        {% else %}
+                          <img class="exp-card-image"
+                               alt="{{ page.title }}"
+                               src="{{ page.extra.remote_image }}" />
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div class="exp-card-content">
+                <h1 class="exp-card-title">
+                    {% if page.extra?.link_to %}
+                        <a href={{ page.extra.link_to }}>{{ page.title }}</a>
+                    {% elif page.content %}
+                        <a href={{ page.permalink | safe }}>{{ page.title }}</a>
+                    {% else %}
+                        {{ page.title }}
+                    {% endif %}
+                </h1>
+
+                <div class="exp-card-info">
+                    {% if page.extra?.name %}
+                        {{ page.extra.name }}
+                    {% endif %}
+
+                    {% if page.extra?.name and page.extra?.duration %}
+                        &bull;
+                    {% endif %}
+
+                    {% if page.extra?.duration %}
+                        {{ page.extra.duration }}
+                    {% endif %}
+
+                    {% if (page.extra?.name or page.extra?.duration) and (page.extra?.location or page.extra?.contract) %}
+                        <br>
+                    {% endif %}
+
+                    {% if page.extra?.contract %}
+                        {{ page.extra.contract }}
+                    {% endif %}
+
+                    {% if page.extra?.contract and page.extra?.location %}
+                        &bull;
+                    {% endif %}
+
+                    {% if page.extra?.location %}
+                        {{ page.extra.location }}
+                    {% endif %}
+                </div>
+
+                {% if page.description %}
+                    <p class="exp-card-tagline">
+                        {{ page.description }}
+                    </p>
+                {% endif %}
+
+                {% include "partials/card_footer.html" %}
+            </div>
+        </div>
+    {% endfor -%}
+</div>
+{% endcomponent exp_cards_posts %}
+
+{% block main_content %}
+    {% if section.extra?.section_path -%}
+        {% set section = get_section(path=section.extra.section_path) %}
+    {% endif -%}
+
+    {% if section.title %}
+        {{<post.page_header title={section.title} />}}
+    {% endif %}
+
+    {% if section.content %}
+        <div class="section-content">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
+
+    <main>
+        {%- if paginator %}
+            {%- set show_pages = paginator.pages -%}
+        {% else %}
+            {%- set show_pages = section.pages -%}
+        {% endif -%}
+
+        {{<exp_cards_posts pages={show_pages} section={section} />}}
+    </main>
+
+    {% if paginator %}
+        <ul class="pagination">
+            {% if paginator.previous %}
+                <span class="page-item page-prev">
+                    <a href={{ paginator.previous }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+                </span>
+            {% endif %}
+
+            {% if paginator.next %}
+                <span class="page-item page-next">
+                    <a href={{ paginator.next }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+                </span>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock main_content %}
+
