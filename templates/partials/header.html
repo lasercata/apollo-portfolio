@@ -25,7 +25,7 @@
 
     {# Site title #}
     {% set current_path = current_path | default(value="/") %}
-    {% if current_path == "/" %}
+    {% if current_path == "/" or current_path == "/" ~ lang or current_path == "/" ~ lang ~ "/" %}
         <title>{{<post.site_title config={config} />}}</title>
         {% if not page_has_og_title %}
             <meta property="og:title" content="{{<post.site_title config={config} />}}" />
@@ -37,6 +37,8 @@
                 {{ page.title }}
             {% elif section?.title %}
                 {{ section.title }}
+            {% elif config.extra?.title %}
+                {{ config.extra.title }}
             {% elif config.title %}
                 {{ config.title }}
             {% else %}

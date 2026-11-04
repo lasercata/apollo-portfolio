@@ -62,5 +62,5 @@
 {% endcomponent post.page_header %}
 
 {% component post.site_title(config: map) %}
-{{ config.title | default(value="Home") }}
+{{ (config.extra?.title or config.title) | default(value="Home") }}
 {% endcomponent post.site_title %}
