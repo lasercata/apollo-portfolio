@@ -4,6 +4,13 @@ template = "homepage.html"
 [extra]
 path_to_exp = "exp_edu/experience/_index.md"
 path_to_edu = "exp_edu/education/_index.md"
+
+meta = [
+    { property = "og:title", content = "Apollo-portfolio" },
+    { property = "og:description", content = "Un tema portfolio moderno e minimalista basato su Zola." },
+    { property = "og:url", content = "https://example.com" },
+    { property = "og:image", content = "https://example.com/image.png" },
+]
 +++
 
 <style>

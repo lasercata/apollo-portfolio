@@ -11,14 +11,23 @@
               content="{{ config.extra.fediverse_creator }}" />
     {% endif %}
 
+    {% if section?.extra?.meta %}
+        {% for data in section.extra.meta %}
+            <meta {% for key, value in data %} {% if key == "property" and value == "og:title" %} {% set_global page_has_og_title = true -%} {% endif %}
+                  {% if key == "property" and value == "og:description" %} {% set_global page_has_og_description = true -%} {% endif %}
+                  {% if key == "name" and value == "description" %} {% set_global page_has_description = true -%} {% endif %}
+                  {{ key }}="{{ value }}"
+                  {% endfor %} />
+        {% endfor %}
+    {% endif %}
+
     {% if page?.extra?.meta %}
         <!-- the meta data config goes here  -->
         {% for data in page.extra.meta %}
             <meta {% for key, value in data %} {% if key == "property" and value == "og:title" %} {% set_global page_has_og_title = true -%} {% endif %}
                   {% if key == "property" and value == "og:description" %} {% set_global page_has_og_description = true -%} {% endif %}
                   {% if key == "name" and value == "description" %} {% set_global page_has_description = true -%} {% endif %}
-                  {{ key }}
-                  None="{{ value }}"
+                  {{ key }}="{{ value }}"
                   {% endfor %} />
         {% endfor %}
     {% endif %}

@@ -38,6 +38,7 @@ Modern and minimalistic theme powered by [Zola](https://getzola.org). See a live
 - [x] Table of Contents
 - [x] Configurable cards layout
 - [X] Multiple languages
+- [X] Link preview via `section.extra.meta` (see example in `content/_index.md`)
 
 ## Installation
 
