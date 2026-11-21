@@ -29,7 +29,7 @@ copyright = "Your name"
 
 # Source code link (footer, optional)
 repo_url = "https://github.com/lasercata/apollo-portfolio/"
-repo_view = true  # Add a link to source code in pages
+repo_view = false  # Add a link to source code in pages
 
 # Status page link (footer, optional)
 status_page_link = "https://status.example.com"
