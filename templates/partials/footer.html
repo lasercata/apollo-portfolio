@@ -10,16 +10,26 @@
   {# &middot; #}
   &bull;
 
-  <div>
-    {% if config.extra.repo_url %}
+  {% if config.extra.repo_url %}
+    <div>
       <a href="{{ config.extra.repo_url }}" class="source-code">
         {# <img alt="source code" src="{{ get_url(path='icons/code.svg') }}" /> #}
         source
       </a>
-    {% endif %}
-  </div>
+    </div>
 
-  &bull;
+    &bull;
+  {% endif %}
+
+  {% if config.extra.status_page_link %}
+    <div class="socials">
+      <a href="{{ config.extra.status_page_link }}" class="social">
+        <img alt="status" src="{{ get_url(path='icons/status.svg') }}" />
+      </a>
+    </div>
+
+    &bull;
+  {% endif %}
 
   {% include "partials/socials.html" %}
 </footer>

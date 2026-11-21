@@ -27,9 +27,12 @@ title = "apollo-portfolio"
 copyright = "Your name"
 # favicon = "/icon/favicon.png"
 
-# Source code link (footer)
+# Source code link (footer, optional)
 repo_url = "https://github.com/lasercata/apollo-portfolio/"
-repo_view = false  # Add a link to source code in pages
+repo_view = true  # Add a link to source code in pages
+
+# Status page link (footer, optional)
+status_page_link = "https://status.example.com"
 
 # If `false`, all pages should be translated (won't compile otherwise).
 # Set to `true` to disable it.
