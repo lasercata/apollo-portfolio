@@ -93,15 +93,21 @@
             {% set website_id = config.extra.analytics.umami.website_id %}
             {% set host_url = config.extra.analytics.umami.host_url | default(value="https://api-gateway.umami.dev/") %}
 
-            <script defer
-                    src="{{ get_url(path='js/imamu.js') }}"
-                    data-website-id="{{ website_id }}"
-                    data-host-url="{{ host_url }}"></script>
-
             {% if config.extra.analytics.umami.enable_heatmap %}
                 <script defer
-                    src="{{ host_url ~ "/recorder.js" }}"
-                    data-website-id="{{ website_id }}"></script>
+                        src="{{ host_url ~ "/script.js" }}"
+                        data-website-id="{{ website_id }}"
+                        data-host-url="{{ host_url }}"></script>
+
+                <script defer
+                        src="{{ host_url ~ "/recorder.js" }}"
+                        data-website-id="{{ website_id }}"
+                        data-host-url="{{ host_url }}"></script>
+            {% else %}
+                <script defer
+                        src="{{ get_url(path='js/imamu.js') }}"
+                        data-website-id="{{ website_id }}"
+                        data-host-url="{{ host_url }}"></script>
             {% endif %}
         {% endif %}
 

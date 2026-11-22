@@ -69,7 +69,7 @@ host = "example.com" # default= goatcounter.com
 [extra.analytics.umami]
 website_id = "43929cd1-1e83...."
 host_url = "https://stats.mywebsite.com" # default: https://api-gateway.umami.dev/
-enable_heatmap = false
+enable_heatmap = false  # Note: when enabling heatmap, the script is loaded from `host_url`, so make sure it is not umami.* otherwise it will be blocked by Easylist.
 
 [extra.en]
 menu = [
