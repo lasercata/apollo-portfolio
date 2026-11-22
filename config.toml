@@ -69,6 +69,7 @@ host = "example.com" # default= goatcounter.com
 [extra.analytics.umami]
 website_id = "43929cd1-1e83...."
 host_url = "https://stats.mywebsite.com" # default: https://api-gateway.umami.dev/
+enable_heatmap = false
 
 [extra.en]
 menu = [

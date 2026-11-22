@@ -97,6 +97,12 @@
                     src="{{ get_url(path='js/imamu.js') }}"
                     data-website-id="{{ website_id }}"
                     data-host-url="{{ host_url }}"></script>
+
+            {% if config.extra.analytics.umami.enable_heatmap %}
+                <script defer
+                    src="{{ host_url ~ "/recorder.js" }}"
+                    data-website-id="{{ website_id }}"></script>
+            {% endif %}
         {% endif %}
 
         {% if config.extra.analytics.goatcounter?.user %}
